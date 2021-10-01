@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ver paciente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-list-header lines="full">
+  <ion-label>
+    Datos personales
+  </ion-label>
+</ion-list-header>
+
+<ion-content>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <ion-item class="ion-margin">
+      <ion-label position="stacked">Nombre: </ion-label>
+      <ion-input formControlName="name" disabled="true"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin">
+      <ion-label position="stacked">Apellidos: </ion-label>
+      <ion-input formControlName="lastName" disabled="true"></ion-input>
+    </ion-item>
+  </form>
+
+  <ion-list-header lines="full">
+    <ion-label>
+      Controles
+    </ion-label>
+    <ion-button color="success" class="ion-right-margin" [routerLink]="['/add-control-patient/', this.id]">Agregar</ion-button>
+  </ion-list-header>
+  
+  <ion-list class="ion-margin">
+    <ion-item *ngFor="let patient of patients_control">
+      <ion-label>
+        <p>Peso: {{patient.weight}}</p>
+        <p>Temperatura: {{patient.temperature}}</p>
+      </ion-label>
+      <ion-label>
+        <p>Presión: {{patient.pressure}}</p>
+        <p>Nivel de saturación: {{patient.saturation_level}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

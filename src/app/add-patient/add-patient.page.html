@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Registrar paciente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+    <ion-item class="ion-margin">
+      <ion-label position="stacked">Nombre: </ion-label>
+      <ion-input formControlName="name" placeholder="Ingrese el nombre del paciente"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin">
+      <ion-label position="stacked">Apellidos: </ion-label>
+      <ion-input formControlName="lastName" placeholder="Ingrese el apellido del paciente"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin">
+      <ion-label position="stacked">Fecha de nacimiento: </ion-label>
+      <ion-datetime formControlName="birthday" placeholder="Selecciones una fecha"></ion-datetime>
+    </ion-item>
+
+    <ion-item class="ion-margin" shape = "round">
+      <ion-label position="stacked">Estatura: </ion-label>
+      <ion-input formControlName="height" placeholder="Ingrese la estatura del paciente" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin">
+      <ion-label position="stacked">Dirección: </ion-label>
+      <ion-input formControlName="address" placeholder="Ingrese la dirección del paciente"></ion-input>
+    </ion-item>
+    
+    <ion-button color="success" expand="block" size="default " class="ion-margin" type="submit">Agregar</ion-button>
+  </form>
+</ion-content>

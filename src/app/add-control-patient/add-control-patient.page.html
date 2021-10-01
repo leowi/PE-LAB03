@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Agregar control</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="controlForm" (ngSubmit)="onSubmit()">
+    <ion-item class="ion-margin">
+      <ion-label position="stacked">Peso: </ion-label>
+      <ion-input formControlName="weight" placeholder="Ingrese la estatura del paciente" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin">
+      <ion-label position="stacked">Temperatura: </ion-label>
+      <ion-input formControlName="temperature" placeholder="Ingrese la estatura del paciente" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin">
+      <ion-label position="stacked">Presion: </ion-label>
+      <ion-input formControlName="pressure" placeholder="Ingrese la estatura del paciente" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin" shape = "round">
+      <ion-label position="stacked">Nivel de saturación: </ion-label>
+      <ion-input formControlName="saturation_level" placeholder="Ingrese la estatura del paciente" type="number"></ion-input>
+    </ion-item>
+    
+    <ion-button color="success" expand="block" size="default " class="ion-margin" type="submit">Agregar</ion-button>
+  </form>
+</ion-content>
